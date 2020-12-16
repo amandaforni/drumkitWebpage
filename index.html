@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bang the Drums</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+    </style>
+    <div style="background-image: url('13.svg');"></div>
+    <link rel="stylesheet" href="style.css">
+</head>
+<canvas width="128" height="128" hidden></canvas>
+<div class="display">
+    <div class="wrap">
+        <h1 class="text-display">Time to annoy the neighbours...</h1>
+        <h1 id="instructions">Press the keys to make some music!</h1>
+        <div class="cards">
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>boom</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">a</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>clap</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">d</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>hi-hat</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">t</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>kick</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">g</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>open-hat</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">y</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>ride</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">space</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>snare</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">j</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>tink</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">p</div>
+                </div>
+            </div>
+            <div class="card item-key">
+                <div class="card-header">
+                    <p>tom</p>
+                </div>
+                <div class="card-event-key">
+                    <div class="main-description">m</div>
+                </div>
+            </div>
+        </div>
+        <div class="sounds">
+            <audio id="a-boom">
+                <source src="sounds/boom.wav" type="audio/mpeg">
+            </audio>
+            <audio id="d-clap">
+                <source src="sounds/clap.wav" type="audio/mpeg">
+            </audio>
+            <audio id="t-hihat">
+                <source src="sounds/hihat.wav" type="audio/mpeg">
+            </audio>
+            <audio id="g-kick">
+                <source src="sounds/kick.wav" type="audio/mpeg">
+            </audio>
+            <audio id="y-openhat">
+                <source src="sounds/openhat.wav" type="audio/mpeg">
+            </audio>
+            <audio id="space-ride">
+                <source src="sounds/ride.wav" type="audio/mpeg">
+            </audio>
+            <audio id="j-snare">
+                <source src="sounds/snare.wav" type="audio/mpeg">
+            </audio>
+            <audio id="p-tink">
+                <source src="sounds/tink.wav" type="audio/mpeg">
+            </audio>
+            <audio id="m-tom">
+                <source src="sounds/tom.wav" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </div>
+    <script>
+
+        //Event Listeners
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "65") {
+                $("#a-boom")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "68") {
+                $("#d-clap")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "84") {
+                $("#t-hihat")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "71") {
+                $("#g-kick")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "89") {
+                $("#y-openhat")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "32") {
+                $("#space-ride")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "74") {
+                $("#j-snare")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "80") {
+                $("#p-tink")[0].play();
+            }
+        });
+        $("body").keydown(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == "77") {
+                $("#m-tom")[0].play();
+            }
+        });
+    </script>
+    </body>
+
+</html>
